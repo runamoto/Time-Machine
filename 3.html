@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Three</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <style>
+    .constraint {
+      background-color: #dccfae;
+      opacity: 100%;
+    }
+    p {
+      color: #4b371b;
+      top: 30px;
+    }
+    p.normal {
+      margin-left: 20px;
+      position: relative;
+      width: 200px;
+      top: 100px;
+      border: 10px solid #cfbeae;
+      padding: 10px;
+    }
+
+    p.round {
+      margin-left: 20px;
+      position: relative;
+      width: 200px;
+      top: 120px;
+      border: 10px solid #cfbeae;
+      border-radius: 5px;
+      padding: 20px;
+    }
+
+    p.rounder {
+      margin-left: 20px;
+      position: relative;
+      width: 200px;
+      top: 140px;
+      border: 10px solid #cfbeae;
+      border-radius: 8px;
+      padding: 30px;
+    }
+
+    p.roundest {
+      margin-left: 20px;
+      position: relative;
+      width: 200px;
+      top: 180px;
+      border: 10px solid #cfbeae;
+      border-radius: 20px;
+      padding: 40px;
+    }
+
+    p.outline {
+      margin-left: 400px;
+      position: absolute;
+      text-align: center;
+      width: 200px;
+      outline: #968a79 solid 10px;
+      top: 19px;
+      border: 10px solid #cfbeae;
+      border-radius: px;
+      padding: 10px;
+    }
+
+    a:link {
+      left: 400px;
+      position: absolute;
+      text-align: center;
+      width: 200px;
+      outline: #968a79 solid 10px;
+      outline-style: dotted;
+      top: 150px;
+      border: 10px solid #cfbeae;
+      border-radius: px;
+      padding: 10px;
+    }
+
+    a:visited {
+      color: #31285a;
+    }
+
+    img {
+      position: absolute;
+      left: 715px;
+      top: 20px;
+      border: 5px solid #968a79;
+      border-radius: 20px;
+      border-width: 30px;
+    }
+
+    p.imgbrd {
+      position: absolute;
+      left: 921px;
+      top: 557px;
+    }
+  </style>
+  <body>
+    <div class="constraint">
+      <p class="normal">This is the default border</p>
+      <p class="round">This is a round border with more padding</p>
+      <p class="rounder">This is a rounder border with even more padding</p>
+      <p class="roundest">
+        This is the roundest border of them all and highest padding
+      </p>
+      <p class="outline">
+        This element has an outline, a border and centered text
+      </p>
+      <a href="https://www.omama.cafe">This is a clickable hyperlink</a>
+      <img src="yahya.JPG" style="width: 500px; height: 500px" />
+      <p class="imgbrd">This image has a border</p>
+    </div>
+  </body>
+</html>

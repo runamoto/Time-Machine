@@ -1,0 +1,102 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <title>Seven</title>
+  </head>
+  <style>
+    @font-face {
+      font-family: "black";
+      src: url("black.otf");
+    }
+
+    .constraint {
+      background-color: rgb(248, 189, 248);
+      opacity: 100%;
+    }
+    .flex-container {
+      display: flex;
+      background-color: rgb(248, 189, 248);
+    }
+    .flex-container > img {
+      background-size: contain;
+      width: 300px;
+      height: auto;
+      margin: 10px;
+      padding: 20px;
+    }
+    .flex-container > p {
+      background-size: contain;
+      width: 300px;
+      height: auto;
+      margin: 10px;
+      padding: 20px;
+    }
+    p.click {
+      padding: 20px;
+      margin: 50px;
+      display: inline;
+      z-index: 1;
+      color: aliceblue;
+      font-size: 60px;
+      top: 30px;
+    }
+  </style>
+
+  <body>
+    <div class="constraint">
+      <p class="click">Click anywhere to change state</p>
+
+      <div class="flex-container">
+        <img class="1" src="images-for-six/1.png" alt="" />
+        <img class="2" src="images-for-six/2.png" alt="" />
+        <img class="3" src="images-for-six/3.png" alt="" />
+      </div>
+
+      <div class="flex-container">
+        <p class="desc">
+          A Love Letter to Village By the Grange<br />Mundane Archive<br />
+          Issue 1<br />
+        </p>
+        <p class="desc2">
+          I don’t remember my first time at The Village by Grange, but what I do
+          remember is the feeling of being slightly disappointed by it. As an
+          international student, I was expecting something more grand to come
+          along with my twenty four thousand dollar tuition fee. “At least the
+          Popeyes is halal” I said to myself. Little did I know that this little
+          place that we call The Grange would consume so many hours of my time,
+          money and thoughts.
+        </p>
+        <p class="desc3">
+          Once upon a time... In 1967, a company named Windlass had big plans.
+          Plans to build something new and exciting called the Village by the
+          Grange, a complex with tall apartment buildings.
+        </p>
+      </div>
+    </div>
+  </body>
+  <script>
+    var displayState = "flex";
+
+    window.onload = function () {
+      $(".flex-container").click(changeState);
+    };
+
+    function changeState() {
+      if (displayState == "flex") {
+        $(".flex-container").css("display", "grid");
+        displayState = "grid";
+      } else if (displayState == "grid") {
+        $(".flex-container").css("display", "inline-grid");
+
+        displayState = "inline-grid";
+      } else if (displayState == "inline-grid") {
+        $(".flex-container").css("display", "inherit");
+        displayState = "inherit";
+      }
+    }
+  </script>
+</html>

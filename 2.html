@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Two</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <style>
+    /* here I had to figure out that to change the bg colour of the frame I had to use the constraint tag and not the body tag */
+    .constraint {
+      background-color: pink;
+      opacity: 60%;
+      /* opacity: 30%; when I did this, it made everything in the constraint low opacity except box 3, bu why?*/
+      /*  it was because the three was in top of the constraint tag in the html*/
+    }
+
+    .dashed {
+      position: absolute;
+      background-color: black;
+      border-style: dashed;
+      box-shadow: 0px 0px 80px 0px blue;
+      width: 300px;
+      height: 200px;
+      top: 241px;
+      left: 715px;
+    }
+
+    .one {
+      position: absolute;
+      background-color: #000000;
+      top: 78px;
+      left: 427px;
+      width: 268px;
+      height: 335px;
+      transform: rotate(84.8deg);
+      box-shadow: 0px 0px 50px 0px blue;
+    }
+
+    .triangle {
+      position: absolute;
+      z-index: 10;
+      top: 240px;
+      left: 721px;
+      rotate: 180deg;
+      width: 0;
+      height: 0;
+      border: 150px solid transparent;
+      border-top: 0;
+      border-bottom: 200px solid orange;
+    }
+
+    .container {
+      display: relative;
+    }
+
+    .two {
+      position: absolute;
+      background-color: #000;
+      top: 100px;
+      left: 103px;
+      width: 100px;
+      height: 100px;
+      transition: all 3000ms;
+      box-shadow: 0px 0px 50px 0px #ff8f00;
+    }
+
+    .two:hover {
+      background-color: pink;
+      box-shadow: 0px 0px 10px 0px red;
+    }
+
+    .three {
+      position: absolute;
+      background-color: #000;
+      top: 303px;
+      left: 212px;
+      width: 100px;
+      height: 100px;
+      box-shadow: 0px 0px 50px 0px #ff8f00;
+    }
+
+    .text {
+      overflow-y: scroll;
+      font-family: "Arial Narrow";
+      font-weight: 700;
+      letter-spacing: 0.1px;
+      width: 200px;
+      height: 100px;
+      position: absolute;
+      top: 100px;
+      left: 200px;
+      padding: 10px;
+      border: 4px dotted yellow;
+      transform: rotate(10deg);
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    }
+    /* I had written this as .p before but none of the code was working */
+    p {
+      position: absolute;
+      color: #ff8f00;
+      font-size: medium;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      top: 53px;
+      left: 103px;
+    }
+  </style>
+  <body>
+    <p>HOVER HERE</p>
+    <div class="constraint">
+      <div class="three"></div>
+      <div class="one"></div>
+      <div class="two"></div>
+
+      <div class="text">
+        I learned how to use box shadow and position absolute and overlay
+        hidden.I learned how to use box shadow and position absolute and overlay
+        hidden.I learned how to use box shadow and position absolute and overlay
+        hidden.I learned how to use box shadow and position absolute and overlay
+        hidden.I learned how to use box shadow and position absolute and overlay
+        hidden.I learned how to use box shadow and position absolute and overlay
+        hidden.I learned how to use box shadow and position absolute and overlay
+        hidden.I learned how to use box shadow and position absolute and overlay
+        hidden.I learned how to use box shadow and position absolute and overlay
+        hidden.I learned how to use box shadow and position absolute and overlay
+        hidden.
+      </div>
+
+      <div class="container">
+        <div class="triangle"></div>
+        <div class="dashed"></div>
+      </div>
+    </div>
+  </body>
+</html>

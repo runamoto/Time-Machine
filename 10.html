@@ -1,0 +1,232 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <title>Eleven</title>
+  </head>
+  <style>
+    @font-face {
+      font-family: "black";
+      src: url("black.otf");
+    }
+
+    .constraint {
+      background-color: rgb(234, 190, 209);
+      opacity: 100%;
+
+      text-align: center;
+    }
+
+    h1,
+    h2 {
+      font-family: "times new roman";
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .btn-red {
+      background-color: red;
+    }
+
+    .btn-orange {
+      background-color: orange;
+    }
+
+    .btn-yellow {
+      background-color: yellow;
+    }
+
+    .btn-green {
+      background-color: greenyellow;
+    }
+
+    .btn-blue {
+      background-color: lightblue;
+    }
+
+    .btn-purple {
+      background-color: rgb(184, 121, 184);
+    }
+
+    .btn-black {
+      background-color: lightgray;
+    }
+
+    /* from https://css-tricks.com/css-link-hover-effects/ */
+    a.hover {
+      text-decoration: none;
+      color: black;
+      /* deleted font weight settings */
+      position: relative;
+    }
+
+    a.hover::before {
+      content: "";
+      /* altered colour to fit website style */
+      background-color: #fbd87f;
+      position: absolute;
+      left: 0;
+      bottom: 3px;
+      width: 100%;
+      height: 8px;
+      z-index: -1;
+      transition: all 0.3s ease-in-out;
+    }
+
+    a.hover:hover::before {
+      bottom: 0;
+      height: 100%;
+    }
+
+    .row {
+      width: 100%;
+    }
+
+    .btn {
+      border-radius: 12px;
+      width: 81px;
+      height: 40px;
+      font-size: 17px;
+    }
+    .explaination {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      text-align: left;
+      font-size: 20px;
+    }
+  </style>
+
+  <body>
+    <div class="constraint">
+      <div class="explaination">
+        In this code I used P5.js for the first time to create a drawing tool
+      </div>
+      <h1>Draw below!</h1>
+      <!-- container parent for drawing canvas -->
+      <div id="canv-holder"></div>
+
+      <h2>Colour</h2>
+      <!-- buttons that call colourChange function with rgb code as param -->
+      <button type="button" class="btn btn-red" onclick="colourChange(255,0,0)">
+        red
+      </button>
+      <button
+        type="button"
+        class="btn btn-orange"
+        onclick="colourChange(255,153,51)"
+      >
+        orange
+      </button>
+      <button
+        type="button"
+        class="btn btn-yellow"
+        onclick="colourChange(255,255,51)"
+      >
+        yellow
+      </button>
+      <button
+        type="button"
+        class="btn btn-green"
+        onclick="colourChange(51,255,51)"
+      >
+        green
+      </button>
+      <button
+        type="button"
+        class="btn btn-blue"
+        onclick="colourChange(102,178,255)"
+      >
+        blue
+      </button>
+      <button
+        type="button"
+        class="btn btn-purple"
+        onclick="colourChange(204,0,204)"
+      >
+        purple
+      </button>
+      <button type="button" class="btn btn-black" onclick="colourChange(0,0,0)">
+        black
+      </button>
+      <button
+        type="button"
+        class="btn btn-outline-dark"
+        onclick="colourChange(255,255,255)"
+      >
+        white
+      </button>
+
+      <h2>Brush Size</h2>
+      <!-- buttons that call the sizeChange function with radius num as param -->
+      <button
+        type="button"
+        class="btn btn-outline-dark"
+        onclick="sizeChange(10)"
+      >
+        small
+      </button>
+      <button
+        type="button"
+        class="btn btn-outline-dark"
+        onclick="sizeChange(20)"
+      >
+        medium
+      </button>
+      <button
+        type="button"
+        class="btn btn-outline-dark"
+        onclick="sizeChange(30)"
+      >
+        large
+      </button>
+    </div>
+  </body>
+
+  <script>
+    // rgb variables for colour changing
+    let r = 0;
+    let g = 0;
+    let b = 0;
+
+    // brush size variable for size changing
+    let s = 20;
+
+    // sketch.js set up for canvas
+    function setup() {
+      // canvas positioning
+      let canvas = createCanvas(600, 400);
+      canvas.parent("canv-holder");
+      // no outline to circles
+      noStroke();
+      background(244, 243, 238);
+    }
+
+    // set up for the drawing space
+    function draw() {
+      if (mouseIsPressed) {
+        ellipse(mouseX, mouseY, s, s);
+        // taking variables for brush colour
+        fill(r, g, b);
+      } else {
+        noFill();
+      }
+    }
+
+    // changing the colour of the brush with params
+    function colourChange(red, green, blue) {
+      r = red;
+      g = green;
+      b = blue;
+    }
+
+    // changing size of brush using param
+    function sizeChange(size) {
+      s = size;
+      console.log(s);
+    }
+  </script>
+</html>

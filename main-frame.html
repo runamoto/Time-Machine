@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <title>Main Frame</title>
+  </head>
+  <style>
+    body {
+      background-color: #fffdc0;
+    }
+    .constraint {
+      margin-top: 20px;
+      background-image: url("./eye.jpeg");
+      background-repeat: repeat-6;
+      opacity: 100%;
+    }
+    .canvas {
+      position: absolute;
+      z-index: 1;
+      top: 30px;
+      left: 500px;
+      background-color: antiquewhite;
+      width: 500px;
+      height: 650px;
+    }
+
+    button {
+      background-color: #ffc0cb;
+      border: 2px solid #fcabb9;
+      margin: 10px;
+      position: relative;
+      border-radius: 100px;
+      width: 80px;
+      height: 80px;
+      left: 150px;
+      font-size: 20px;
+    }
+
+    button:hover {
+      background-color: #fcabb9;
+    }
+
+    button:active {
+      background-color: #fcabb9;
+      box-shadow: 0 5px #bd4444;
+      transform: translateY(4px);
+    }
+  </style>
+  <body>
+    <div class="daddy">
+      <iframe src="1.html" class="constraint"></iframe>
+    </div>
+    <button onclick="change(1)">1</button>
+    <button onclick="change(2)">2</button>
+    <button onclick="change(3)">3</button>
+    <button onclick="change(4)">4</button>
+    <button onclick="change(5)">5</button>
+    <button onclick="change(6)">6</button>
+    <button onclick="change(7)">7</button>
+    <button onclick="change(8)">8</button>
+    <button onclick="change(9)">9</button>
+    <button onclick="change(10)">10</button>
+    <button onclick="change(11)">11</button>
+    <button onclick="change(12)">12</button>
+  </body>
+  <script>
+    function change(num) {
+      document.querySelector(".constraint").setAttribute("src", num + ".html");
+    }
+  </script>
+</html>

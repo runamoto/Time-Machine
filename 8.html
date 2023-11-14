@@ -1,0 +1,158 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script> -->
+    <title>Nine</title>
+  </head>
+  <style>
+    @font-face {
+      font-family: "black";
+      src: url("black.otf");
+    }
+    .constraint {
+      background-image: radial-gradient(
+        circle,
+        rgb(154, 107, 74),
+        rgb(153, 117, 91),
+        rgb(194, 157, 131)
+      );
+      opacity: 100%;
+    }
+    .drawer {
+      position: absolute;
+      width: 29cm;
+      top: -103px;
+      left: 150px;
+    }
+    #envelope {
+      position: absolute;
+      width: 29cm;
+      top: -121px;
+      left: 359px;
+      z-index: 1000;
+    }
+    .pencil1 {
+      position: absolute;
+      width: 29cm;
+      top: -156px;
+      left: -197px;
+    }
+    .pencil2 {
+      position: absolute;
+      width: 29cm;
+      top: -156px;
+      left: -162px;
+    }
+    .pencil3 {
+      position: absolute;
+      width: 29cm;
+      top: -156px;
+      left: -128px;
+    }
+    .pencil4 {
+      position: absolute;
+      width: 29cm;
+      top: -156px;
+      left: -94px;
+    }
+    .pencil5 {
+      position: absolute;
+      width: 29cm;
+      top: -156px;
+      left: -60px;
+    }
+    .rubber {
+      position: absolute;
+      width: 29cm;
+      top: 94px;
+      left: -31px;
+    }
+    .box {
+      position: absolute;
+      width: 29cm;
+      top: -175px;
+      left: 118px;
+    }
+    .thread {
+      position: absolute;
+      z-index: 1;
+      width: 29cm;
+      top: -139px;
+      left: 19px;
+    }
+    .paperclip1 {
+      position: absolute;
+      z-index: 1;
+      width: 29cm;
+      top: -202px;
+      left: 0px;
+    }
+    .paperclip2 {
+      position: absolute;
+      z-index: 1;
+      width: 29cm;
+      top: -202px;
+      left: 42px;
+    }
+    .paperclip3 {
+      position: absolute;
+      z-index: 1;
+      width: 29cm;
+      top: -202px;
+      left: 85px;
+    }
+    .paperclip4 {
+      position: absolute;
+      z-index: 1;
+      width: 29cm;
+      top: -202px;
+      left: 128px;
+    }
+  </style>
+
+  <body>
+    <div class="constraint">
+      <img class="drawer" src="images-for-nine/drawer.png" />
+      <img id="envelope" src="images-for-nine/envelope.png" />
+      <div class="paperclip">
+        <img class="paperclip1" src="images-for-nine/paperclip.png" />
+        <img class="paperclip2" src="images-for-nine/paperclip.png" />
+        <img class="paperclip3" src="images-for-nine/paperclip.png" />
+        <img class="paperclip4" src="images-for-nine/paperclip.png" />
+      </div>
+      <div class="pencil">
+        <img class="pencil1" src="images-for-nine/pencil.png" />
+        <img class="pencil2" src="images-for-nine/pencil.png" />
+        <img class="pencil3" src="images-for-nine/pencil.png" />
+        <img class="pencil4" src="images-for-nine/pencil.png" />
+        <img class="pencil5" src="images-for-nine/pencil.png" />
+      </div>
+      <img class="rubber" src="images-for-nine/rubber.png" />
+      <img class="thread" src="images-for-nine/thread.png" />
+      <img class="box" src="images-for-nine/box.png" />
+    </div>
+  </body>
+  <script>
+    window.onload = function () {
+      // $("#envelope").draggable({
+      //   containment: "parent",
+      //   cursor: "move",
+      // });
+
+      $("#envelope").draggable();
+    };
+  </script>
+</html>

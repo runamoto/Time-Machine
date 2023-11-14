@@ -1,0 +1,164 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <title>Eight</title>
+  </head>
+  <style>
+    @font-face {
+      font-family: "black";
+      src: url("black.otf");
+    }
+    .constraint {
+      background-color: white;
+      opacity: 100%;
+    }
+
+    .soil {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    p.title {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      z-index: 1;
+      font-size: 80px;
+      font-family: "black";
+      color: rgb(255, 255, 255);
+    }
+
+    .title:hover {
+      font-size: smaller;
+      text-shadow: 0 0 8px #2eb625;
+      transition: color 500ms, font-size 5s;
+    }
+
+    .green-box {
+      position: absolute;
+      border: 4px solid rgb(119, 179, 29);
+      border-radius: 50%;
+      top: 200px;
+      left: 300px;
+      z-index: 1;
+      background-color: transparent;
+      width: 30px;
+      height: 60px;
+    }
+    .worm1 {
+      position: absolute;
+      width: 10%;
+      height: auto;
+      top: 565px;
+      left: 10px;
+    }
+    .worm2 {
+      position: absolute;
+      width: 10%;
+      top: 10px;
+      left: 1100px;
+    }
+    p.seed {
+      position: absolute;
+      top: 200px;
+      left: 350px;
+      z-index: 1;
+      font-size: 50px;
+      font-family: "black";
+      color: rgb(255, 255, 255);
+    }
+    p.sprout {
+      position: absolute;
+      top: 300px;
+      left: 30px;
+      z-index: 1;
+      font-size: 50px;
+      font-family: "black";
+      color: transparent;
+    }
+    p.plant {
+      position: absolute;
+      top: 34px;
+      left: 895px;
+      z-index: 1;
+      font-size: 50px;
+      font-family: "black";
+      color: transparent;
+    }
+    p.flower {
+      position: absolute;
+      z-index: 1;
+      top: 610px;
+      left: 155px;
+      font-size: 50px;
+      font-family: "black";
+      color: transparent;
+    }
+  </style>
+
+  <body>
+    <div class="constraint">
+      <img class="soil" src="images/soil.webp" alt="" />
+      <p class="title">My internet terrarium</p>
+      <p class="seed">Click on the seed</p>
+      <p class="sprout">Click on the sprouts</p>
+      <p class="plant">Click on the plants</p>
+      <p class="flower">CONGRATULATIONS! you made internet life.</p>
+
+      <div class="green-box"></div>
+      <img class="worm1" src="images/worm1.gif" />
+      <img class="worm2" src="images/worm2.gif" />
+    </div>
+  </body>
+  <script>
+    var seedState = "seed";
+
+    window.onload = function () {
+      $(".green-box").click(changeColor);
+      $(".title").css("color", "#99e8b0");
+      $();
+    };
+
+    function changeColor() {
+      if (seedState == "seed") {
+        $(".green-box").css("border-radius", "0px");
+        $(".green-box").css("border", "0px");
+        $(".green-box").css("background-image", "url(images/seedling.png)");
+        $(".green-box").css("width", "804px");
+        $(".green-box").css("height", "1280px");
+        $(".green-box").css("top", "70px");
+        $(".green-box").css("border", "0px");
+        $(".seed").css("color", "transparent");
+        $(".sprout").css("color", "white");
+        $(".plant").css("color", "transparent");
+        $(".flower").css("color", "transparent");
+
+        seedState = "plant";
+      } else if (seedState == "plant") {
+        $(".green-box").css("background-image", "url(images/plant.png)");
+        $(".green-box").css("width", "860px");
+        $(".green-box").css("height", "700px");
+        $(".green-box").css("height", "700px");
+        $(".sprout").css("color", "transparent");
+        $(".plant").css("color", "white");
+        $(".flower").css("color", "transparent");
+        seedState = "flower";
+      } else if (seedState == "flower") {
+        $(".green-box").css("background-image", "url(images/flower.png)");
+        $(".green-box").css("width", "750px");
+        $(".green-box").css("height", "525px");
+        $(".green-box").css("top", "90px");
+        $(".green-box").css("image", "690px");
+        $(".green-box").css("background-size", "contain");
+        $(".green-box").css("background-repeat", "repeat-x");
+        $(".sprout").css("color", "transparent");
+        $(".plant").css("color", "transparent");
+        $(".flower").css("color", "white");
+      }
+    }
+  </script>
+</html>

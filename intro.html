@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <title>Intro</title>
+  </head>
+  <style>
+    body {
+      background-color: #e9c0ff;
+    }
+    @keyframes typewriter {
+      0% {
+        width: 0;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+    .typewriter {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      flex-direction: column;
+    }
+    .para {
+      text-align: left;
+      max-width: 900px;
+      font-family: monospace;
+      border-left: 1em solid rgb(255, 255, 255);
+      letter-spacing: 0.07em;
+      animation: typing 3.5s steps(30, end),
+        blinking-cursor 0.5s step-end infinite;
+      margin-bottom: 50px;
+    }
+    a {
+      border: 1px solid rgb(255, 255, 255);
+      padding: 2px;
+      transition: 500ms ease-in-out;
+      animation: blowup 5000ms ease-in-out infinite;
+    }
+
+    a:hover {
+      cursor: pointer;
+      background-color: blue;
+      color: yellow;
+      transition: 500ms ease-in-out;
+      animation: none;
+    }
+
+    @keyframes blowup {
+      0% {
+        letter-spacing: 0em;
+        color: black;
+        background-color: white;
+      }
+      50% {
+        letter-spacing: 0.1em;
+        color: yellow;
+        background-color: black;
+      }
+      100% {
+        letter-spacing: 0em;
+        color: black;
+        background-color: white;
+      }
+    }
+
+    .brainrot {
+      text-align: left;
+      max-width: 900px;
+      font-family: monospace;
+      color: 0.17em solid rgb(255, 0, 43);
+      letter-spacing: 0.17em;
+      animation: typing 3.5s steps(30, end),
+        blinking-cursor 0.5s step-end infinite;
+      margin-bottom: 50px;
+    }
+
+    .brain {
+      position: absolute;
+      top: 630px;
+      width: 100px;
+      height: 100px;
+      left: 50px;
+    }
+    .flies {
+      position: absolute;
+      top: 630px;
+      width: 100px;
+      left: 50px;
+      height: 100px;
+    }
+  </style>
+  <body>
+    <div class="typewriter">
+      <div class="para">
+        Let’s be clear, this was not my first time having a go at coding. I took
+        a computer science class and tried to teach myself javascript all last
+        summer…Not to mention my Graphic Design 2 course was almost entirely
+        composed of having to learn code. I’m going on record to say that
+        although those classes, websites and projects were all near and dear to
+        my heart, I never really learned how to code from them. Most of it was
+        me asking chatGPT and my friends for help. That all was about to change
+        with this project. <a href="main-frame.html">“Time Machine</a> is
+        project where you will track some aspect of your subject at a time
+        interval of your choosing”. A million different themes stuck out in my
+        head: I could do something about the history of the ‘Aurat march’
+        movement in Pakistan, or about the reign of Zia Ul Haq that Arabized the
+        country of Pakistan and it’s impacts seen in society today. So many
+        topics that I was itching to research and bring awareness towards…But in
+        doing those things, I feared that I would once again follow that
+        relentless cycle of relying on chat GPT to do all the coding for me
+        whilst I focused on the design aspect. But that wasn’t going to happen.
+        In the end, I decided to employ a more personal project, something that
+        would leave a lasting impression on not only my perception of
+        programming and code but also on my skill set.
+      </div>
+      <div class="para">
+        My project is a Time Machine that takes you through my progression
+        understanding code in the 5 weeks 4 days we had for this. It is a
+        testament for my to look back onto and see how far I was able to make it
+        in such a short amount of time, granted that I would have never even
+        thought I would get this far. As a woman of colour I was never
+        encouraged to explore the bounds of computer science, it was always
+        framed as a mans job, something that requires logic, reasoning and
+        ratiocination. Too much math for a girl like me. And until a while ago,
+        I internalized this. All the men around me were the only ones who could
+        code—Heck, even at OCAD, the only people who I know could code well were
+        men. Even with this knowledge of internalized disdain toward code, I
+        couldn’t break out of the shell. Until I did.
+      </div>
+      <div class="para">
+        Now that this project is over, I still want to continue to expand my
+        coding skills, learn more advanced java script and play around with
+        p5.js to create tools that help me in my practice and to create
+        interesting generative works that I would have never envisioned myself
+        doing.
+      </div>
+      <div class="brainrot">
+        Recently I was made aware that my work lacks a refined ‘quality’. To
+        that I say fuck you, I’m in graphic design undergrad at OCAD University,
+        what do you expect. But also, it’s not that my work lacks what some
+        people regard as commendable or exemplary, it lacks marketability, and
+        that’s something I’m okay with.
+      </div>
+
+      <img class="brain" src="images-for-intro/brain.png" />
+      <img class="flies" src="images-for-intro/flies.gif" />
+    </div>
+  </body>
+  <script>
+    var pageState = "empty";
+    window.onload = function () {
+      $("brain").click(changeColor);
+      $();
+    };
+
+    function changeColor() {
+      if (pageState == "empty") {
+        $(".brainrot").css("opacity", "100%");
+      }
+    }
+  </script>
+</html>
